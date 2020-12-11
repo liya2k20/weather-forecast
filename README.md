@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is to show a demo of a weather forecasting app communicationg to a remote Express application. The app refreshes at configurated rate. 
 
 ## Available Scripts
 
