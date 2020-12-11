@@ -6,9 +6,10 @@ import { useTranslation } from "react-i18next";
 import { ForecastResponse, WeatherResponse } from '../../api/models/weatherResponse';
 import { fetchWeather } from '../../api/repository/weatherRepository';
 import AppContext from "../../AppContext";
-import { WEATHER_FORECAST } from "../../constants";
+import { VIVSOFT_TITLE } from "../../constants";
 import Spinner from "../Spinner";
 import { ChartDatatype } from './Chart';
+import vertical_logo from './vertical_logo.png';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -16,8 +17,13 @@ const useStyles = makeStyles((theme: Theme) =>
       marginTop: theme.spacing(5),
       padding: theme.spacing(5),
       paddingRight: theme.spacing(18),
-      paddingLeft: theme.spacing(18)
+      paddingLeft: theme.spacing(16)
     },
+    img: {
+      paddingLeft: theme.spacing(5),
+      marginTop: theme.spacing(5),
+      
+    }
   }));
 
 const ChartContainer: React.FC = () => {
@@ -75,7 +81,16 @@ const ChartContainer: React.FC = () => {
   return (
     <>
       {loading ? <Spinner /> : <>
-        <Typography variant="h6" align={'center'} className={classes.label}>{t(WEATHER_FORECAST)}</Typography>
+        
+        <Typography variant="h6" align={'center'} >
+          <img
+              src={vertical_logo}
+              alt="logo"
+              width="80"
+              height="30"
+              className = {classes.img}
+            /> <span className={classes.label}>{t(VIVSOFT_TITLE)}</span>
+            </Typography>
         <div style={{
           paddingBottom: '56.25%', /* 16:9 */
           position: 'relative',
