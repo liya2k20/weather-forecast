@@ -7,7 +7,6 @@ export const formatData = (weatherResponse : WeatherResponse)  => {
          forecastDay.hour.forEach((hour) => {
             forecastArray.push({time: hour.time, tempF: hour.temp_f});
     });
-    console.log("forecastArray "+JSON.stringify(forecastArray));
     return forecastArray;
 });
 const weather: Weather = {
